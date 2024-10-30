@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Quote Generator</title>
+    <style>
+        .quote-box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 60%;
+            height: 40%;
+            border: 2px solid black;
+            padding: 6px;
+            margin: 21px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quote-box">
+        <h2>Quote of the day</h2>
+        <blockquote id="quote">loading</blockquote>
+        <span id="author">loading</span>
+    </div>
+    <button onclick="generatQuote(api_url)">New Quote</button>
+    <button>tweet</button>
+
+
+    <script>
+        const quote = document.querySelector(".quote")
+        const author = document.querySelector(".author")
+        let api_url = "https://api.quotable.io/random";
+
+        async function generatQuote(url) {
+            const response = await fetch(url)
+            let data = await response.json()
+            quote.innerHTML = data.content;
+            author.innerHTML = data.auther;
+        }
+        
+    </script>
+    
+</body>
+</html>

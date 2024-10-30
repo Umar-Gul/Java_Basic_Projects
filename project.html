@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>To Do List</h2>
+        <div class="inputs">
+            <input id="inp" type="text" placeholder="Enter your tasks">
+            <button id="add" onclick="add()">add</button>
+        </div>
+        <div class="text"></div>
+    </div>
+
+    <script>
+       let inputs = document.getElementById("inp")
+       let text = document.getElementsByClassName("text")
+        document.getElementsByClassName(".inputs")
+        function add(){
+            if(inputs.value == ""){
+                alert("Please enter your task")
+            }
+            else{
+                let newElmnt = document.createElement("ul")
+                newElmnt.innerHTML = `$(inputs.value) <i class = "fa-solid fa-trash"></i>`
+                
+                inputs.value == " ";
+                function remove(){
+                    newElmnt.remove()
+                
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>
